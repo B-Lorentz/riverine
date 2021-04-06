@@ -4,6 +4,7 @@
 
 #include <ostream>
 #include <math.h>
+namespace thd{
 constexpr double EQUAL_EPS = 1e-8;
 bool AreEqual(double a, double b){
     return abs(a-b) < EQUAL_EPS;
@@ -84,7 +85,7 @@ PVector::PVector(const PVector &v) : x(v.x), y(v.y), z(v.z) {}
 
 std::ostream &operator<<(std::ostream &os, const PVector &v)
 {
-    os << '(' << v.x << ', ' << v.y << ', ' << v.z << ')';
+    os << ' ' << v.x << ' ' << v.y << ' ' << v.z << ' ';
     return os;
 }
 
@@ -236,5 +237,5 @@ PVector &PVector::operator-=(const PVector &v)
 {
     return AreEqual(Length(), 1.0);
 }
-
+}
 #endif
