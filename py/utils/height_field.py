@@ -22,7 +22,7 @@ def sine_hf(N, L, A):
     r = -np.cos(2*np.pi*(mean[:,None] - x)/N)+1
     return r
 
-def abs_hf(N, depth):
+def abs_hf(N):
     x, y, _ = cors(N)
     return np.abs((x-N/2)/N)
 
