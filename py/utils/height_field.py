@@ -16,6 +16,11 @@ def random_hf(N, K, smin, smax):
     r = np.exp( -((x[:,:,None] - xs)/sx)**2 -((y[:,:,None] - ys)/sy)**2 )
     r =  (r*fs).sum(-1)
     return r
+
+def gauss_hf(N, X, Y, S):
+    x, y, _ = cors(N)
+    r = np.exp( -((x - X)/S)**2 -((y - Y)/S)**2 )
+    return r
 def sine_hf(N, L, A):
     x, y, cor = cors(N)
     mean = N/2*A*np.cos(np.pi*2*cor/L) + N/2
